@@ -1,0 +1,16 @@
+<ul>
+  <li *ngFor="let joke of jokesList">{{joke.id}} | {{joke.text}} | {{joke.rating}} | <button (click)="deleteJoke(joke.id)">Delete</button></li>
+</ul>
+
+<div>
+  <button (click)="loadJokes()">Load jokes</button>
+</div>
+
+<div>
+  <p>id: <input [ngModel]="tempJoke.id" type="number" (ngModelChange)="tempJoke.id=$event"></p>
+  <p>rating: <input [ngModel]="tempJoke.rating" type="number" (ngModelChange)="tempJoke.rating=$event"></p>
+  <p>text: <input [ngModel]="tempJoke.text" type="text" (ngModelChange)="tempJoke.text=$event"></p>
+
+  <button (click)="addJoke()">Add</button>
+  <button (click)="updateJoke()">Update</button>
+</div>
